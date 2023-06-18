@@ -1,5 +1,5 @@
 # Window
-for fucks sake, I know its bad
+I'm learning, don't make fun of me
 
 ```cpp
 #include "Window.h"
