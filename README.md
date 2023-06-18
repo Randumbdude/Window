@@ -5,7 +5,7 @@ for fucks sake, I know its bad
 #include "Window.h"
 
 int main(){
-  Window* window = new Window(L"Account Manager", 700, 300);
+  Window* window = new Window(L"Demo Window", 700, 300);
   startWindow(window);
 }
 ```
