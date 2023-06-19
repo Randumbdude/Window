@@ -31,5 +31,7 @@ int main(){
   window->command = Command; //initialize window's command method
   
   startWindow(window);
+
+  return 0;
 }
 ```
