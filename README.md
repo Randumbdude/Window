@@ -1,4 +1,4 @@
-# Window
+# Window (winAPI)
 I'm learning, don't make fun of me
 
 I know its bad but it works
