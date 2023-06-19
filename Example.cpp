@@ -1,20 +1,16 @@
 #include "Window.h"
 
-void Paint(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-	//add button to window
-	CreateWindow(L"button", L"demo text",
-		WS_VISIBLE | WS_CHILD,
-		20, 90, 190, 25,
-		hWnd, (HMENU)1, NULL, NULL);
+void buttonAction(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+	MessageBox(0, L"Demo Button Action", L"Button Action", MB_OK);
 }
 
-void Command(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-	switch (LOWORD(wParam)) {
-		//button action
-	case 1:
-		MessageBox(0, L"Button Pressed", L"Demo", MB_OK);
-		break;
-	}
+void Paint(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
+	createLabel(L"Demo Label", 20, 10, 90, 20, 1, hWnd);
+	createButton(L"Demo Button", 20, 60, 90, 20, 2, hWnd);
+	createTextField(L"", 20, 110, 90, 20, 3, hWnd);
+}
+void Command(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
+	assignActionID(2, hWnd, uMsg, wParam, lParam, buttonAction);
 }
 
 int main() {
