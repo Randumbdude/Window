@@ -7,6 +7,7 @@ I know its bad but it works
 ```cpp
 #include "Window.h"
 
+//demo button action method
 void demoButtonAction(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
   MessageBox(0, L"Demo Button Action", L"Button Action", MB_OK);
 }
@@ -18,7 +19,8 @@ void Paint(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 }
 
 void Command(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-  assignActionID(2, hWnd, uMsg, wParam, lParam, demoButtonAction); //assigning the 'demoButtonAction' method to the button's actionID
+  //assigning the 'demoButtonAction' method to the button's actionID
+  assignActionID(2, hWnd, uMsg, wParam, lParam, demoButtonAction);
 }
 
 int main(){
