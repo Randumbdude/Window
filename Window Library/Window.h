@@ -14,14 +14,13 @@ class Window
 {
 public:
 	Window(const wchar_t* title, int width, int height);
-	Window(const Window&) = delete;
 	Window& operator = (const Window&) = delete;
 	~Window();
 
 	bool ProcessMessages();
 
-	void startWindow();
-	void stopWindow();
+	void start();
+	void stop();
 
 	bool isRunning;
 

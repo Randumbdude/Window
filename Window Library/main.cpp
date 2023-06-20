@@ -1,7 +1,11 @@
 #include "Window.h"
+#include <iostream>
+
+Window window = Window(L"Demo Window", 700, 300);
 
 void buttonAction(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
 	MessageBox(0, L"Demo Button Action", L"Button Action", MB_OK);
+	window.stop();
 }
 
 void Paint(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
@@ -14,12 +18,13 @@ void Command(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 }
 
 int main() {
-	Window* window = new Window(L"Demo Window", 700, 300);
+	window.paint = Paint;
+	window.command = Command;
 
-	window->paint = Paint;
-	window->command = Command;
+	window.start();
 
-	window->startWindow();
+	int input;
+	std::cin >> input;
 
 	return 0;
 }

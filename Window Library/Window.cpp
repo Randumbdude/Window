@@ -107,7 +107,7 @@ bool Window::ProcessMessages() {
 	return true;
 }
 
-void Window::startWindow()
+void Window::start()
 {
 	this->isRunning = true;
 
@@ -117,8 +117,7 @@ void Window::startWindow()
 		}
 		//render
 	}
-	delete this;
 }
-void Window::stopWindow() {
+void Window::stop() {
 	this->isRunning = false;
 }
